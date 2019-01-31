@@ -39,4 +39,6 @@ testem.log
 Thumbs.db
 
 #server data.
-configuration.json
+firebase.config.json
+sql.config.json
+serviceAccountKey.json

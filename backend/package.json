@@ -26,6 +26,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "firebase": "^5.8.1"
+    "firebase": "^5.8.1",
+    "firebase-admin": "^6.5.1",
+    "firebase-functions": "^2.1.0"
   }
 }
