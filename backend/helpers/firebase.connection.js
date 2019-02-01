@@ -5,43 +5,40 @@
 
 'use strict'
 
-// function FireBaseConnection(config) {
-//     const fbInitializate = require('firebase-admin');
-//     const serviceKey = require('../serviceAccountKey.json');
-//     var fbConfig = {
-//         apiKey: isNaN(config.apiKey) ? '' : config.apiKey,
-//         authDomain: isNaN(config.authDomain) ? '' : config.authDomain,
-//         databaseURL: isNaN(config.databaseURL) ? '' : config.databaseURL,
-//         projectId: isNaN(config.projectId) ? '' : config.projectId,
-//         storageBucket: isNaN(config.storageBucket) ? '' : config.storageBucket,
-//         messagingSenderId: isNaN(config.messagingSenderId) ? '' : config.messagingSenderId,
-//     };
-//     return fbInitializate
-//         .initializeApp({
-//             credential: fbInitializate.credential.cert(serviceKey),
-//             databaseURL: "https://ga-security-app.firebaseio.com"
-//         })
-//         .database();
-// }
-
+/**
+ * Conexiones para firebase.
+ */
 var Connection = {
-    adminConnection: function (config) {
+
+     /**
+      * Conexion tipo administrador.
+      */
+    adminConnection: function () {
         const fbInitializate = require('firebase-admin');
         const serviceKey = require('../serviceAccountKey.json');
-        var fbConfig = {
-            apiKey: isNaN(config.apiKey) ? '' : config.apiKey,
-            authDomain: isNaN(config.authDomain) ? '' : config.authDomain,
-            databaseURL: isNaN(config.databaseURL) ? '' : config.databaseURL,
-            projectId: isNaN(config.projectId) ? '' : config.projectId,
-            storageBucket: isNaN(config.storageBucket) ? '' : config.storageBucket,
-            messagingSenderId: isNaN(config.messagingSenderId) ? '' : config.messagingSenderId,
-        };
         return fbInitializate
             .initializeApp({
                 credential: fbInitializate.credential.cert(serviceKey),
                 databaseURL: "https://ga-security-app.firebaseio.com"
             })
             .database();
+    },
+
+    /**
+     * Conexion tipo usuario.
+     * @param {any} config 
+     */
+    userConnection: function(config){
+        const fbInit = require('firebase');
+        var fbConfig = {
+            apiKey: config.apiKey,
+            authDomain: config.authDomain,
+            databaseURL: config.databaseURL,
+            projectId: config.projectId,
+            storageBucket: config.storageBucket,
+            messagingSenderId: config.messagingSenderId
+        }
+        return fbInit.initializeApp(fbConfig);
     }
 };
 

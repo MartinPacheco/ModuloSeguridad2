@@ -5,7 +5,7 @@
 
  'use strict'
 
- var sqlConnection = require('./sqlconnection.js');
+ var sqlConnection = require('./sql.connection.js');
  var xxx = sqlConnection.prototype.connect();
 
  class SQLCommand {
@@ -15,7 +15,7 @@
         sql.on('error', err => {
             console.log(err);
         });
-        
+
      }
  }
 
