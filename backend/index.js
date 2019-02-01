@@ -3,11 +3,7 @@
  * @author Martin Pacheco
  */
 
-'use strict';
+ 'user strict'
 
-var firebase = require('./helpers/firebase.commands');
-var fireadmin = require('./helpers/firebase.admin.commands');
-
-// firebase.loginWithUsernameAndPassword('user@example.com','secretPassword');
-//fireadmin.fireBaseCreateUser('test@testttt.com','testttt');
-
+ var server = require('./server');
+ 

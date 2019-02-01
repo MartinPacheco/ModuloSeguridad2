@@ -5,7 +5,7 @@
 
  'use strict'
 
- var fireAdmin = require('./firebase.connection');
+var fireAdmin = require('./firebase.connection');
 
 var FireBaseAdminCommands = {
     fireBaseCreateUser: function(email,password){

@@ -5,7 +5,10 @@
  */
 'use strict';
 
-import express from 'express'
+const express = require('express');
+const bodyParser = require('body-parser');
+var firebase = require('./helpers/firebase.commands');
+var fireadmin = require('./helpers/firebase.admin.commands');
 
- const app = express();
- connect();
+// firebase.loginWithUsernameAndPassword('user@example.com','secretPassword');
+//fireadmin.fireBaseCreateUser('test@testttt.com','testttt');
